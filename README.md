@@ -1,90 +1,151 @@
 GitHub RAG Assistant
 
-Overview
-GitHub RAG Assistant is an AI-powered system that enables users to interact with any GitHub repository using natural language queries. It leverages Retrieval-Augmented Generation (RAG) to analyze codebases and generate context-aware responses.
+---
 
-Problem Statement
-Understanding large or unfamiliar code repositories is time-consuming. Developers often spend significant effort navigating files and interpreting code structure.
+**Overview**
 
-Solution
-This project addresses the problem by combining semantic search with large language models. It retrieves relevant code snippets from a repository and generates accurate explanations based on user queries.
+GitHub RAG Assistant is an AI-powered system that enables natural language interaction with any GitHub repository. It uses Retrieval-Augmented Generation (RAG) to analyze codebases and generate context-aware responses.
 
-System Architecture
-User Query → Streamlit Interface → RAG Pipeline → GitHub API → Code Retrieval → Text Chunking → Embedding Generation → FAISS Vector Store → Similarity Search → LLM (Groq) → Response Generation
+---
 
-Tech Stack
-Backend: Python
-Frontend: Streamlit
-LLM: Groq API (Llama 3.1-8B-Instant)
-Embeddings: Sentence Transformers (all-MiniLM-L6-v2)
-Vector Database: FAISS
-API Integration: GitHub REST API
+**Key Highlights**
 
-Features
+* Enables querying entire repositories using natural language
+* Combines semantic search with large language models
+* Provides context-aware explanations instead of generic answers
+* Designed with modular and scalable architecture
+* Implements industry-relevant RAG pipeline
 
-* Natural language interaction with GitHub repositories
-* Automated repository indexing
+---
+
+**Problem Statement**
+
+Understanding large or unfamiliar codebases is time-consuming and inefficient. Developers often need to manually navigate multiple files to understand functionality.
+
+---
+
+**Solution**
+
+This system retrieves relevant portions of a repository and uses a language model to generate accurate, context-driven explanations. It reduces the effort required to understand complex projects.
+
+---
+
+**System Architecture**
+
+User Query
+→ Streamlit Interface
+→ RAG Pipeline
+→ GitHub API (Fetch Files)
+→ Text Chunking
+→ Embedding Generation
+→ FAISS Vector Store
+→ Similarity Search
+→ LLM (Groq - Llama 3.1)
+→ Response Generation
+
+---
+
+**Tech Stack**
+
+Backend
+Python
+
+Frontend
+Streamlit
+
+AI / ML
+Groq API (Llama 3.1-8B-Instant)
+Sentence Transformers (all-MiniLM-L6-v2)
+
+Vector Database
+FAISS
+
+Integration
+GitHub REST API
+
+---
+
+**Core Features**
+
+* Repository indexing and semantic search
 * Context-aware code understanding
-* Fast semantic search using FAISS
-* Supports multiple repositories with dynamic indexing
+* Query-based summarization
+* Multi-repository support with dynamic indexing
+* Efficient retrieval using vector similarity
 
-Input
+---
+
+**Input**
 
 * GitHub Owner (e.g., RadheyaGaikwad)
 * Repository Name (e.g., Fire-Detection-Project)
-* User Query (e.g., “Provide a summary of this project”)
+* User Query (e.g., "Provide a summary of this project")
 
-Output
+---
 
-* Project summaries
+**Output**
+
+* Structured project summaries
 * Code explanations
 * Functional insights
-* Context-based answers derived from repository content
+* Context-driven answers derived from repository data
 
-Workflow
+---
 
-1. The user provides repository details.
-2. The system fetches repository files using the GitHub API.
-3. Files are split into smaller chunks.
-4. Each chunk is converted into embeddings.
-5. Embeddings are stored in a FAISS vector database.
-6. User query is converted into an embedding.
-7. Relevant chunks are retrieved using similarity search.
-8. Retrieved context is passed to the LLM.
-9. The LLM generates a structured response.
+**Workflow**
 
-Setup Instructions
+1. User provides repository details
+2. System fetches repository files
+3. Files are divided into manageable chunks
+4. Each chunk is converted into vector embeddings
+5. Embeddings are stored in FAISS
+6. Query is converted into embedding
+7. Relevant chunks are retrieved
+8. LLM generates final response
 
-1. Clone the repository
-   git clone https://github.com/RadheyaGaikwad/GitHub_RAG_Assistant.git
-   cd GitHub_RAG_Assistant
+---
 
-2. Install dependencies
-   pip install -r requirements.txt
+**Setup Instructions**
 
-3. Configure environment variables
-   Create a .env file and add:
-   GROQ_API_KEY=your_api_key_here
+Clone repository
+git clone https://github.com/RadheyaGaikwad/GitHub_RAG_Assistant.git
+cd GitHub_RAG_Assistant
 
-4. Run the application
-   streamlit run app/ui.py
+Install dependencies
+pip install -r requirements.txt
 
-Key Learnings
+Configure environment
+Create a .env file and add:
+GROQ_API_KEY=your_api_key_here
 
-* Implementation of Retrieval-Augmented Generation (RAG)
+Run application
+streamlit run app/ui.py
+
+---
+
+**Key Learnings**
+
+* Practical implementation of RAG architecture
 * Integration of LLMs with external data sources
 * Semantic search using vector databases
 * End-to-end AI application development
 
-Future Enhancements
+---
 
-* File-level code explanation
-* Improved UI with repository navigation
-* Deployment for public access
-* Streaming responses for better UX
+**Future Improvements**
 
-Author
+* File-level explanation
+* Enhanced UI with repository navigation
+* Cloud deployment
+* Streaming responses
+
+---
+
+**Author**
+
 Radheya Gaikwad
-Artificial Intelligence and Data Science Engineering Student
+Artificial Intelligence and Data Science Engineering
 
-This project demonstrates practical implementation of modern AI systems combining retrieval mechanisms with language models to solve real-world developer challenges.
+---
+
+This project demonstrates a practical approach to combining retrieval systems with large language models to solve real-world software engineering challenges.
